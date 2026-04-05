@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dog Care Salon Dear.dogs</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #FAFAF8;
+    color: #1A1A18;
+    line-height: 1.85;
+  }
+  .lp {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+  }
+  .fv {
+    padding: 4rem 0 3.5rem;
+    border-bottom: 1px solid #E5E4DF;
+  }
+  .fv-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: #9E9C93;
+    margin-bottom: 1.75rem;
+  }
+  .fv-headline {
+    font-size: clamp(24px, 6vw, 32px);
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.02em;
+  }
+  .fv-sub {
+    font-size: 14px;
+    color: #5A5955;
+    line-height: 2;
+  }
+  .section {
+    padding: 3rem 0;
+    border-bottom: 1px solid #E5E4DF;
+  }
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    color: #B0ADA4;
+    margin-bottom: 1.1rem;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.02em;
+  }
+  .body-text {
+    font-size: 14px;
+    color: #4A4845;
+    line-height: 2;
+    margin-bottom: 1rem;
+  }
+  .accent-line {
+    border-left: 2px solid #C8C5BC;
+    padding: 0.25rem 0 0.25rem 1.1rem;
+    margin: 1.75rem 0;
+    font-size: 13px;
+    color: #5A5955;
+    line-height: 2;
+  }
+  .risk-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    border-top: 1px solid #E5E4DF;
+  }
+  .risk-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #E5E4DF;
+    font-size: 13px;
+    color: #4A4845;
+    line-height: 1.8;
+  }
+  .risk-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #C8C5BC;
+    flex-shrink: 0;
+    margin-top: 9px;
+  }
+  .concept-box {
+    background: #F0EFE9;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1.75rem 0;
+  }
+  .concept-tag {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #9E9C93;
+    margin-bottom: 0.85rem;
+  }
+  .concept-quote {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.65;
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+  .concept-desc {
+    font-size: 13px;
+    color: #5A5955;
+    line-height: 2;
+  }
+  .diff-list {
+    margin: 1.75rem 0;
+    border: 1px solid #E5E4DF;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .diff-item {
+    padding: 1.4rem 1.5rem;
+    border-bottom: 1px solid #E5E4DF;
+    background: #FAFAF8;
+  }
+  .diff-item:last-child { border-bottom: none; }
+  .diff-num {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: #B0ADA4;
+    margin-bottom: 0.45rem;
+  }
+  .diff-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .diff-desc {
+    font-size: 13px;
+    color: #4A4845;
+    line-height: 1.9;
+  }
+  .narrow-box {
+    border: 1px solid #C8C5BC;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin: 1.75rem 0;
+  }
+  .narrow-title {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #1A1A18;
+    margin-bottom: 0.85rem;
+  }
+  .narrow-list { list-style: none; }
+  .narrow-list li {
+    font-size: 13px;
+    color: #4A4845;
+    padding: 0.35rem 0 0.35rem 1.1rem;
+    position: relative;
+    line-height: 1.8;
+  }
+  .narrow-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #C8C5BC;
+  }
+  .narrow-divider {
+    border: none;
+    border-top: 1px solid #E5E4DF;
+    margin: 1.1rem 0;
+  }
+  .narrow-note {
+    font-size: 12px;
+    color: #9E9C93;
+    font-style: italic;
+    line-height: 1.85;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E4DF;
+  }
+  .voice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.75rem 0;
+  }
+  .voice-card {
+    background: #F0EFE9;
+    border-radius: 12px;
+    padding: 1.4rem 1.6rem;
+  }
+  .voice-meta {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: #9E9C93;
+    margin-bottom: 0.7rem;
+  }
+  .voice-change {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.65rem;
+    line-height: 1.65;
+  }
+  .voice-ep {
+    font-size: 13px;
+    color: #4A4845;
+    line-height: 1.95;
+    margin-bottom: 0.65rem;
+  }
+  .voice-why {
+    font-size: 12px;
+    color: #7A7872;
+    line-height: 1.8;
+  }
+  .cta-section { padding: 3rem 0 0; }
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 1.75rem 0;
+  }
+  @media (max-width: 420px) { .cta-grid { grid-template-columns: 1fr; } }
+  .cta-card {
+    border: 1px solid #C8C5BC;
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+  }
+  .cta-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #B0ADA4;
+    margin-bottom: 0.5rem;
+  }
+  .cta-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+  }
+  .cta-desc {
+    font-size: 12px;
+    color: #5A5955;
+    line-height: 1.85;
+    margin-bottom: 1.1rem;
+  }
+  .btn {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+  }
+  .btn-line { background: #1A1A18; color: #FAFAF8; border: 1px solid #1A1A18; }
+  .btn-epark { background: transparent; color: #1A1A18; border: 1px solid #C8C5BC; }
+  .salon-sig { padding: 2.5rem 0 0; text-align: center; }
+  .salon-name { font-size: 13px; font-weight: 500; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+  .salon-sub { font-size: 10px; color: #9E9C93; letter-spacing: 0.14em; }
+</style>
+</head>
+<body>
+<div class="lp">
+
+  <div class="fv">
+    <p class="fv-eyebrow">DOG CARE SALON DEAR.DOGS</p>
+    <h1 class="fv-headline">「また違う」を<br>繰り返していませんか。</h1>
+    <p class="fv-sub">
+      サロンを変えるたびに、何かが引っかかる。<br>
+      上手に言葉にできないけれど、<br>
+      「この子のことを、本当にわかって扱ってくれているのか」<br>
+      そう感じた瞬間が、一度でもあるなら。<br><br>
+      このページは、その違和感を持つ人のために書いています。
+    </p>
+  </div>
+
+  <div class="section">
+    <p class="section-label">01 — PROBLEM</p>
+    <h2 class="section-title">多くのサロンは、「犬」を見ていない。</h2>
+    <p class="body-text">正確に言えば、「見ている時間がない」のです。</p>
+    <p class="body-text">1日に複数頭をこなす。予約枠は効率で埋まる。スタッフは作業に集中する。それが業界の標準的な構造です。</p>
+    <p class="body-text">悪意ではない。けれど結果として、「一律の対応」が生まれる。怖がりの子も、人懐こい子も、高齢の子も、同じ流れの中に乗せられていく。</p>
+    <div class="accent-line">
+      問題は「どこが丁寧か」ではなく、<br>
+      「その子のことを、判断の基準にしているか」です。
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">02 — AGITATION</p>
+    <h2 class="section-title">「ふつうに終わった」の裏側で、<br>何が起きていたか。</h2>
+    <p class="body-text">毎回、特に問題はない。でも、帰宅後に何となく疲弊している。眠れなかったのか、食欲がない。翌日まで少し元気がない——</p>
+    <p class="body-text">気にしすぎかもしれない、と思いながらも、引っかかる。</p>
+    <p class="body-text">その感覚は、おそらく正しいのです。</p>
+    <ul class="risk-list">
+      <li><span class="risk-dot"></span>ストレス反応は、その場では見えにくい</li>
+      <li><span class="risk-dot"></span>怖がりの子ほど、声に出せず、体で消化している</li>
+      <li><span class="risk-dot"></span>「慣れた」と「諦めた」は、外見上区別がつかない</li>
+      <li><span class="risk-dot"></span>一度ついた恐怖の記憶は、次の施術をより難しくする</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <p class="section-label">03 — DEEPER RISK</p>
+    <h2 class="section-title">放置すると、取り返しのつかない<br>「拒否」になる。</h2>
+    <p class="body-text">トリミングが「嫌なもの」として記憶に刻まれた犬は、次第に施術自体が困難になっていきます。</p>
+    <p class="body-text">暴れる。噛もうとする。シャンプーを受け付けない。サロンに入れない。</p>
+    <p class="body-text">そうなって初めて、「ずっと何かがおかしかった」と気づく飼い主さんは、少なくありません。</p>
+    <div class="accent-line">
+      当サロンにご来店されるお客様の中にも、「他のサロンでお腹を傷だらけにされてから、暴れるようになってしまった」という方がいらっしゃいました。<br><br>
+      ずっと家で少しだけ切って過ごしていたダックスが、初めて「自分からスタッフに寄っていく」姿を見せてくれた——<br>
+      そのご報告をいただいたとき、私たちはこのサロンの意味を確信しました。
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">04 — THE REAL QUESTION</p>
+    <h2 class="section-title">「ケージフリー」「丁寧」「安心」——<br>その言葉の中身を、確認しましたか。</h2>
+    <p class="body-text">今、多くのサロンがそのような言葉を掲げています。言葉は選べる。環境は整えられる。でも、その子を「個」として見る目は、言葉で作ることができません。</p>
+    <p class="body-text">ケージフリーが正解な子もいれば、ケージの方が落ち着く子もいる。おやつで誘うべき子と、静かに待つべき子がいる。</p>
+    <p class="body-text">「条件の良さ」で選ぶのか、「判断できるプロ」で選ぶのか。それが、問いです。</p>
+  </div>
+
+  <div class="section">
+    <p class="section-label">05 — CONCEPT</p>
+    <h2 class="section-title">正解を売らない。<br>その子にとっての最適を選ぶ。</h2>
+    <p class="body-text">Dear.dogsは、「こうすれば安心」という一律の答えを持っていません。</p>
+    <p class="body-text">なぜなら、犬は一頭一頭違うからです。同じトイプードルでも、同じシニアでも、その日の状態・気分・緊張度によって、最適な関わり方は変わる。</p>
+    <p class="body-text">15年以上の経験が教えてくれたのは、「型」ではなく「観察」です。</p>
+    <div class="concept-box">
+      <p class="concept-tag">CORE PHILOSOPHY</p>
+      <p class="concept-quote">「その子を理解するから、<br>変化が起きる。」</p>
+      <p class="concept-desc">施術の前に、その子の歴史を聞く。緊張の種類を見極める。環境を選び、声のかけ方を変え、ペースを合わせる。その積み重ねが、「嫌だったサロン」を「行きたい場所」に変えていく。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">06 — WHY DEAR.DOGS</p>
+    <h2 class="section-title">他との違いは、<br>3つの判断軸にあります。</h2>
+    <div class="diff-list">
+      <div class="diff-item">
+        <p class="diff-num">01</p>
+        <p class="diff-title">「一律」ではなく「個体別の判断」</p>
+        <p class="diff-desc">ケージフリーか否か、おやつを使うか否か——すべて、その子の状態を見て決めます。流行や設備ではなく、目の前の犬が基準です。5匹のポメラニアンをお預かりするとき、5つの接し方をします。</p>
+      </div>
+      <div class="diff-item">
+        <p class="diff-num">02</p>
+        <p class="diff-title">「技術」より「関係性」の蓄積</p>
+        <p class="diff-desc">9年通い続けてくださる方がいます。「他のサロンに行ったとき、違いがすぐわかった」と言われます。その違いは技術だけではない。毎月の対話が、その子の変化を見逃さない目を育てています。飼い主が気づかない体調の変化も、ここでは報告されます。</p>
+      </div>
+      <div class="diff-item">
+        <p class="diff-num">03</p>
+        <p class="diff-title">「報告」ではなく「対話」</p>
+        <p class="diff-desc">施術中の写真・動画をLINEでお送りするのは、安心のためだけではありません。「今日はこうでした」という事実の共有が、次回の最適な関わり方につながる。飼い主との対話が、施術の精度を上げていきます。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">07 — FOR WHOM</p>
+    <h2 class="section-title">正直に言います。<br>向いていない方がいます。</h2>
+    <p class="body-text">価格や立地の条件だけで選びたい方には、正直向いていません。</p>
+    <div class="narrow-box">
+      <p class="narrow-title">Dear.dogsが向いている方</p>
+      <ul class="narrow-list">
+        <li>過去のトリミングで、何かが引っかかった経験がある</li>
+        <li>「この子のことをちゃんと見てほしい」と思っている</li>
+        <li>多少高くても、納得のいく選択をしたい</li>
+        <li>トリミングの後も、愛犬の状態が気になっている</li>
+        <li>繊細な子・怖がりの子・シニアの子を安心して預けたい</li>
+      </ul>
+      <hr class="narrow-divider">
+      <p class="narrow-title">向いていない方</p>
+      <ul class="narrow-list">
+        <li>価格の安さや近さで選びたい方</li>
+        <li>「ケージフリーかどうか」などの条件だけで判断される方</li>
+        <li>仕上がりの見た目・スピードを最優先にされる方</li>
+      </ul>
+      <p class="narrow-note">「秘密にしておきたいくらい大切なサロン」とおっしゃるお客様がいます。私たちが大切にしているのは、数より深さです。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">08 — WHAT CHANGED</p>
+    <h2 class="section-title">変化が、証明です。</h2>
+    <p class="body-text">実際にお越しいただいた方々の声から、再構成しました。</p>
+    <div class="voice-list">
+
+      <div class="voice-card">
+        <p class="voice-meta">30代女性 / ダックスフンド2匹 / 過去のトラウマあり</p>
+        <p class="voice-change">「ずっと家でしか切れなかった子が、自分からスタッフに寄っていった」</p>
+        <p class="voice-ep">以前のサロンでお腹を傷つけられてから、トリミングを拒否するようになっていたダックスフンド。長い間、家で少しずつ切りながら過ごされていました。初来店時、すぐに預かるのではなく、まず声をかけ、慣らすところから始めた。お迎えのとき、2匹ともスタッフの方に自分から近づいていく姿をご覧になった飼い主さんが、「本当にびっくりした」とおっしゃっていました。</p>
+        <p class="voice-why">→ 「慣らす時間」を惜しまない。それがこのサロンの判断基準です。</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-meta">30代女性 / トイプードル / サロンを転々としていた</p>
+        <p class="voice-change">「過去イチかわいい。今まで転々としていたけど、ここにずっと通います」</p>
+        <p class="voice-ep">骨格と毛の柔らかさに長年悩んでいた、とのことでした。骨格を見た上でスタイルを提案。繊細な子でしたが、おやつで遊んでもらいながらリラックスして過ごし、帰宅後も疲れが出なかったとご報告いただきました。2週間経過してもふわふわが持続したことを、とても喜んでいただけました。</p>
+        <p class="voice-why">→ 骨格と毛質から逆算した提案。見た目ではなく、その子の構造から考えます。</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-meta">30代女性 / ビビリな性格の犬 / 9年の長期リピーター</p>
+        <p class="voice-change">「サロンを移転しても、嫌がらずに喜んで通っている」</p>
+        <p class="voice-ep">パピーの頃から9年。非常にビビリな性格の子ですが、引越し後も通い続けてくださっています。「他のサロンに行ったとき、違いがすぐわかった」とのこと。最初に理想のスタイルを持参されたとき、「今は難しいけれど、ここの毛を伸ばせば近づける」と的確に伝えた。その言葉通り、今では理想のスタイルをキープしています。</p>
+        <p class="voice-why">→ 今できないことも正直に伝える。その誠実さが信頼をつくります。</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-meta">40代女性 / 気難しいシニア犬 / 他院で断られた経験あり</p>
+        <p class="voice-change">「シニアだからと断られたのに、ここでは快く受け入れてもらえた」</p>
+        <p class="voice-ep">前のサロンでシニアを理由に断られ、気難しい子でもあったため、不安の中でご来店されました。カウンセリングでは、その子の性格・歴史・状態を丁寧に聞き取り、「とてもお利口な子ですよ」という言葉が返ってきた。それが「見てもらえている」という確信につながったとおっしゃっていました。</p>
+        <p class="voice-why">→ 年齢や気質で判断を変えない。その子が基準です。</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-meta">20代女性 / 人が苦手な先住犬 / 長期リピーター</p>
+        <p class="voice-change">「人が苦手な子が、このサロンのトリマーにだけ心を許した」</p>
+        <p class="voice-ep">人が苦手で、普段は誰にも心を開かない先住犬。それがDear.dogsのトリマーにだけは、穏やかに接していたとのことです。「飼い主が気づかないところまで細やかに見てくれる」という言葉が象徴するように、毎回の体調変化も報告されています。</p>
+        <p class="voice-why">→ 「見る」のではなく「読む」。その子の心の状態を、施術前に把握します。</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-meta">30代女性 / ポメラニアン5匹 / 多頭飼い</p>
+        <p class="voice-change">「他のサロンではおやつを食べなかった子が、ここでは食べるようになった」</p>
+        <p class="voice-ep">5匹、それぞれ性格が違います。他のサロンでは一律に扱われていた部分が、ここでは一頭一頭の特性に合わせた接し方をしてもらえた。その結果、緊張でおやつすら食べられなかった子が、リラックスして食べられるようになりました。「犬ファーストすぎるほど」という言葉が印象的でした。</p>
+        <p class="voice-why">→ おやつを食べられるかどうかも、ストレスのバロメーターです。</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-meta">初回ご来店 / 小型犬 / デビュー</p>
+        <p class="voice-change">「1時間リラックスして過ごせた。デビューが素敵な記念に」</p>
+        <p class="voice-ep">初めてのトリミングで不安を抱えてご来店。笑顔で迎え入れてもらい、リラックスして過ごせたとのこと。施術中の写真もたくさん送っていただき、「記念になりました」とおっしゃっていました。最初の体験が、その後の記憶をつくります。</p>
+        <p class="voice-why">→ 初回の体験が、その子のトリミングへの印象をつくる。だから最初が重要です。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <p class="section-label">09 — NEXT STEP</p>
+    <h2 class="section-title" style="margin-bottom:0.75rem;">まず、あなたの選択を。</h2>
+    <p class="body-text" style="margin-bottom:0.25rem;">初回の方は、LINE相談を受け付けています。</p>
+    <p style="font-size:13px;color:#7A7872;margin-bottom:0.25rem;">「うちの子、大丈夫かな」という段階から、お話しください。</p>
+    <p style="font-size:12px;color:#B0ADA4;margin-bottom:1.75rem;">愛犬の性格・過去の経験・気になっていることを、予約前に共有いただくことで、初回から最適な準備ができます。</p>
+    <div class="cta-grid">
+      <div class="cta-card">
+        <p class="cta-label">LINE</p>
+        <p class="cta-title">まず相談したい方へ</p>
+        <p class="cta-desc">愛犬の性格・過去のサロン経験・気になることを事前にお伝えいただけます。繊細な子・怖がりの子・初回の方に。</p>
+        <a class="btn btn-line" href="#">LINE で相談する</a>
+      </div>
+      <div class="cta-card">
+        <p class="cta-label">EPARK</p>
+        <p class="cta-title">すぐに予約したい方へ</p>
+        <p class="cta-desc">「ここだ」と判断された方は、そのままご予約ください。初回カウンセリングは施術前に行います。</p>
+        <a class="btn btn-epark" href="#">EPARK で予約する</a>
+      </div>
+    </div>
+    <div class="accent-line">
+      どちらの窓口でも、最初にその子のことを教えてください。<br>
+      名前、年齢、性格、これまでのサロン経験——<br>
+      それが、最適な準備につながります。
+    </div>
+  </div>
+
+  <div class="salon-sig">
+    <p class="salon-name">Dog Care Salon Dear.dogs</p>
+    <p class="salon-sub">ディアドッグ — 自宅サロン / 完全予約制</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dog Care Salon Dear.dogs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { font-size: 16px; }
   body {
-    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     background: #FAFAF8;
     color: #1A1A18;
     line-height: 1.85;
@@ -29,11 +31,12 @@
     margin-bottom: 1.75rem;
   }
   .fv-headline {
+    font-family: 'Noto Serif JP', serif;
     font-size: clamp(24px, 6vw, 32px);
     font-weight: 500;
     line-height: 1.5;
     margin-bottom: 1.75rem;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
   .fv-sub {
     font-size: 14px;
@@ -45,17 +48,15 @@
     border-bottom: 1px solid #E5E4DF;
   }
   .section-label {
-    font-size: 9px;
-    letter-spacing: 0.24em;
-    color: #B0ADA4;
-    margin-bottom: 1.1rem;
+    display: none;
   }
   .section-title {
+    font-family: 'Noto Serif JP', serif;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.6;
     margin-bottom: 1.4rem;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
   .body-text {
     font-size: 14px;
@@ -67,6 +68,7 @@
     border-left: 2px solid #C8C5BC;
     padding: 0.25rem 0 0.25rem 1.1rem;
     margin: 1.75rem 0;
+    font-family: 'Noto Serif JP', serif;
     font-size: 13px;
     color: #5A5955;
     line-height: 2;
@@ -107,11 +109,12 @@
     margin-bottom: 0.85rem;
   }
   .concept-quote {
+    font-family: 'Noto Serif JP', serif;
     font-size: 17px;
     font-weight: 500;
     line-height: 1.65;
     margin-bottom: 0.85rem;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
   .concept-desc {
     font-size: 13px;
@@ -137,6 +140,7 @@
     margin-bottom: 0.45rem;
   }
   .diff-title {
+    font-family: 'Noto Serif JP', serif;
     font-size: 15px;
     font-weight: 500;
     margin-bottom: 0.5rem;
@@ -183,6 +187,7 @@
     margin: 1.1rem 0;
   }
   .narrow-note {
+    font-family: 'Noto Serif JP', serif;
     font-size: 12px;
     color: #9E9C93;
     font-style: italic;
@@ -209,6 +214,7 @@
     margin-bottom: 0.7rem;
   }
   .voice-change {
+    font-family: 'Noto Serif JP', serif;
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 0.65rem;
@@ -224,6 +230,7 @@
     font-size: 12px;
     color: #7A7872;
     line-height: 1.8;
+    font-style: italic;
   }
   .cta-section { padding: 3rem 0 0; }
   .cta-grid {
@@ -245,6 +252,7 @@
     margin-bottom: 0.5rem;
   }
   .cta-title {
+    font-family: 'Noto Serif JP', serif;
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 0.6rem;
@@ -270,7 +278,13 @@
   .btn-line { background: #1A1A18; color: #FAFAF8; border: 1px solid #1A1A18; }
   .btn-epark { background: transparent; color: #1A1A18; border: 1px solid #C8C5BC; }
   .salon-sig { padding: 2.5rem 0 0; text-align: center; }
-  .salon-name { font-size: 13px; font-weight: 500; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+  .salon-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.3rem;
+  }
   .salon-sub { font-size: 10px; color: #9E9C93; letter-spacing: 0.14em; }
 </style>
 </head>
@@ -464,13 +478,13 @@
         <p class="cta-label">LINE</p>
         <p class="cta-title">まず相談したい方へ</p>
         <p class="cta-desc">愛犬の性格・過去のサロン経験・気になることを事前にお伝えいただけます。繊細な子・怖がりの子・初回の方に。</p>
-        <a class="btn btn-line" href="#">LINE で相談する</a>
+        <a class="btn btn-line" href="https://lin.ee/YgrpCBw">LINE で相談する</a>
       </div>
       <div class="cta-card">
         <p class="cta-label">EPARK</p>
         <p class="cta-title">すぐに予約したい方へ</p>
         <p class="cta-desc">「ここだ」と判断された方は、そのままご予約ください。初回カウンセリングは施術前に行います。</p>
-        <a class="btn btn-epark" href="#">EPARK で予約する</a>
+        <a class="btn btn-epark" href="https://miniapp.line.me/2007883984-51Mwp44y?SITE_CODE=pet23">EPARK で予約する</a>
       </div>
     </div>
     <div class="accent-line">
